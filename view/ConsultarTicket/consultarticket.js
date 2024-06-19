@@ -126,7 +126,7 @@ $(document).ready(function(){
 });
 
 function ver(tick_id){
-    window.open('http://localhost:90/Helppro/view/DetalleTicket/?ID='+tick_id+'');
+    window.open('https://helppro.tech/view/DetalleTicket/?ID='+tick_id+'');
     
 }
 
