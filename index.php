@@ -5,7 +5,7 @@
     ini_set('display_errors', FALSE);
     ini_set('log_errors', TRUE);
     ini_set('error_log', 'debug.log');
-    
+
     require_once("config/conexion.php");
     if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
         require_once("models/Usuario.php");
@@ -45,7 +45,7 @@
                     <input type="hidden" id="rol_id" name="rol_id" value="1">
 
                     <div class="sign-avatar">
-                        <img src="public/img/Logologin.png" alt="">
+                        <img src="public/img/LogoLogin.png" alt="">
                     </div>
                     <header class="sign-title" id="lbltitulo">Acceso Usuario</header>
                     <?php
