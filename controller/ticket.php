@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Santo_Domingo');
     require_once("../config/conexion.php");
     require_once("../models/Ticket.php");
     $ticket = new Ticket();
