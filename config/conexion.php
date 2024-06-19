@@ -20,8 +20,8 @@
 
 
         public static function ruta(){
-            return "http://localhost:90/Helppro/";
-            return "http://10.0.0.5:90/Helppro/";
+            return "https://helppro.tech//";
+            /* return "http://10.0.0.5:90/Helppro/"; */
         }
 
     }
