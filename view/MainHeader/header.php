@@ -17,7 +17,7 @@
         <div class="site-header-content">
             <div class="site-header-content-in">
                 <div class="site-header-shown">
-                    <div class="dropdown user-menu open">
+                    <div class="dropdown user-menu">
                        <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <img src="../../public/img/avatar-2-64.png" alt="">
                         </button>
