@@ -32,7 +32,8 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    tabla=$('#usuario_data').dataTable({
+
+    tabla=$('#usuario_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,
         dom: 'Bfrtip',
