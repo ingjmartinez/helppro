@@ -68,6 +68,8 @@
 
 	<script type="text/javascript" src="consultarticket.js"></script>
 
+	<!-- <script type="text/javascript" src="consultarticket.js"></script> -->
+
 
 	
 </body>
