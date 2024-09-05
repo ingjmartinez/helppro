@@ -49,17 +49,17 @@
         }
 
         public function update_usuario($usu_id,$usu_nom,$usu_ape,$usu_correo,$usu_pass,$rol_id){
-            $conectar=parent::Conexion();
+            $conectar = parent::Conexion();
             parent::set_names();
-            $sql="UPDATE tm_usuario set
+            $sql = "UPDATE tm_usuario set
                usu_nom = ?,
                usu_ape = ?,
                usu_correo = ?,
                usu_pass = ?,
                rol_id = ?,
-               where
+               WHERE
                usu_id = ? ";
-            $sql=$conectar->prepare($sql);
+            $sql = $conectar->prepare($sql);
             $sql->bindValue(1, $usu_nom);
             $sql->bindValue(2, $usu_ape);
             $sql->bindValue(3, $usu_correo);
