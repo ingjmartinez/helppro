@@ -1,18 +1,11 @@
-<?php
-    date_default_timezone_set('America/Santo_Domingo');
-	error_reporting(E_ALL);
-	ini_set('ignore_repeated_errors', TRUE);
-	ini_set('display_errors', FALSE);
-	ini_set('log_errors', TRUE);
-	ini_set('error_log', 'debug.log');
-	
+<?php	
   require_once("../../config/conexion.php"); 
   if(isset($_SESSION["usu_id"])){ 
 ?>
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<title>AnderCode</>::Mantenimiento Usuario</title>
+	<title>HelpPro</>::Mantenimiento Usuario</title>
 </head>
 <body class="with-side-menu">
 
