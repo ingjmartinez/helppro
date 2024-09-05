@@ -11,6 +11,7 @@
             else {
                 $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"],$_POST["usu_ape"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["rol_id"]);
             }
+            echo json_encode(["status" => "success", "message" => "Registro guardado o actualizado correctamente."]);
         break;
 
         case "listar":
