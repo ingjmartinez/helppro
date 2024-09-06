@@ -56,7 +56,7 @@
                usu_ape = ?,
                usu_correo = ?,
                usu_pass = ?,
-               rol_id = ?,
+               rol_id = ?
                WHERE
                usu_id = ? ";
             $sql = $conectar->prepare($sql);
