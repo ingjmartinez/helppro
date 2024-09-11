@@ -1,40 +1,75 @@
 <?php
-	require_once("../../config/conexion.php");
-	if(isset($_SESSION["usu_id"])){
+require_once("../../config/conexion.php");
+if (isset($_SESSION["usu_id"])) {
 ?>
-<!DOCTYPE html>
-<html>
-    <?php require_once("../MainHead/head.php");?>
-    <title>HelpPro</>::Home</title>
-</head>
-<body class="with-side-menu">
+	<!DOCTYPE html>
+	<html>
+	<?php require_once("../MainHead/head.php"); ?>
+	<title>HelpPro</>::Home</title>
+	</head>
 
-    <?php require_once("../MainHeader/header.php");?>
+	<body class="with-side-menu">
 
-	<div class="mobile-menu-left-overlay"></div>
-	
-	<?php require_once("../MainNav/nav.php");?>
+		<?php require_once("../MainHeader/header.php"); ?>
 
-		<!-- Contenido -->
-	<div class="page-content">
-		<div class="container-fluid">
-			Nuevo Ticket.
-		</div>
-	</div>
+		<div class="mobile-menu-left-overlay"></div>
+
+		<?php require_once("../MainNav/nav.php"); ?>
 
 		<!-- Contenido -->
+		<div class="page-content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="row">
+							<div class="col-sm-4">
+								<article class="statistic-box green">
+									<div>
+										<div class="number" id="lbltotal"></div>
+										<div class="caption">
+											<div>Total de Tickets</div>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-sm-4">
+								<article class="statistic-box yellow">
+									<div>
+										<div class="number" id="lbltotalabierto"></div>
+										<div class="caption">
+											<div>Total de Tickets Abiertos</div>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-sm-4">
+								<article class="statistic-box red">
+									<div>
+										<div class="number" id="lbltotalcerrado"></div>
+										<div class="caption">
+											<div>Total de Tickets Cerrados</div>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-	<?php require_once("../MainJs/js.php");?>
+			<!-- Contenido -->
 
-	<script type="text/javascript" src="home.js"></script>
+			<?php require_once("../MainJs/js.php"); ?>
+
+			<script type="text/javascript" src="home.js"></script>
 
 
-	
-</body>
-</html>
+
+	</body>
+
+	</html>
 <?php
- } else {
+} else {
 	header("Location: " . Conectar::ruta() . "index.php");
-
- }
+}
 ?>
