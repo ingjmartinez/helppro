@@ -93,7 +93,7 @@ class Usuario extends Conectar
     {
         $conectar = parent::Conexion();
         parent::set_names();
-        $sql = "call sp_l_usuario";   /* SELECT * FROM tm_usuario  where est='1' */
+        $sql = "call sp_l_usuario_01";   /* SELECT * FROM tm_usuario  where est='1' */
         $sql = $conectar->prepare($sql);
         $sql->execute();
         return $resultado = $sql->fetchAll();
