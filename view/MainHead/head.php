@@ -28,4 +28,6 @@
 
 <link rel="stylesheet" href="../../public/css/main.css">
 
+<link rel="stylesheet" href="../../public/cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
 <!-- <link rel="stylesheet" href="../../public/css/main.css"> -->
