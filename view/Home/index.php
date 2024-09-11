@@ -5,6 +5,7 @@ if (isset($_SESSION["usu_id"])) {
 	<!DOCTYPE html>
 	<html>
 	<?php require_once("../MainHead/head.php"); ?>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 	<title>HelpPro</>::Home</title>
 	</head>
 
@@ -61,6 +62,8 @@ if (isset($_SESSION["usu_id"])) {
 
 			<?php require_once("../MainJs/js.php"); ?>
 
+			<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 			<script type="text/javascript" src="home.js"></script>
 
 
