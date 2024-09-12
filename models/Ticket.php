@@ -6,7 +6,7 @@ class Ticket extends Conectar
     {
         $conectar = parent::Conexion();
         parent::set_names();
-        $sql = "INSERT INTO tm_ticket (tick_id,usu_id,cat_id,tick_titulo,tick_descrip,tick_estado,fech_crea,est) VALUES (NULL,?,?,?,?,'Abierto',now(),'1');SELECT * FROM tm_categoria WHERE est=1;";
+        $sql = "INSERT INTO tm_ticket (tick_id,usu_id,cat_id,tick_titulo,tick_descrip,tick_estado,fech_crea,usu_asig,fech_asig,est) VALUES (NULL,?,?,?,?,'Abierto',now(),NULL,NULL,'1');SELECT * FROM tm_categoria WHERE est=1;";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $usu_id);
         $sql->bindValue(2, $cat_id);
@@ -28,6 +28,8 @@ class Ticket extends Conectar
                 tm_ticket.tick_descrip,
                 tm_ticket.tick_estado,
                 tm_ticket.fech_crea,
+                tm_ticket.usu_asig,
+                tm_ticket.fech_asig,
                 tm_usuario.usu_nom,
                 tm_usuario.usu_ape,
                 tm_categoria.cat_nom
@@ -84,6 +86,8 @@ class Ticket extends Conectar
                 tm_ticket.tick_descrip,
                 tm_ticket.tick_estado,
                 tm_ticket.fech_crea,
+                tm_ticket.usu_asig,
+                tm_ticket.fech_asig,
                 tm_usuario.usu_nom,
                 tm_usuario.usu_ape,
                 tm_categoria.cat_nom
