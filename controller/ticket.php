@@ -47,7 +47,7 @@ switch ($_GET["op"]) {
             }
 
             $sub_array[] = '<button type="button" onClick="ver('.$row["tick_id"].');"  id="'.$row["tick_id"].'" class="btn btn-inline btn-primary btn-sm ladda-button"><i class="fa fa-eye"></i></button>';
-            $data1[] = $sub_array;
+            $data[] = $sub_array;
         }
         $results = array(
             "sEcho" => 1,
@@ -88,7 +88,7 @@ switch ($_GET["op"]) {
             }
 
             $sub_array[] = '<button type="button" onClick="ver('.$row["tick_id"].');"  id="'.$row["tick_id"].'" class="btn btn-inline btn-primary btn-sm ladda-button"><i class="fa fa-eye"></i></button>';
-            $data1[] = $sub_array;
+            $data[] = $sub_array;
         }
         $results = array(
             "sEcho" => 1,
