@@ -6,11 +6,6 @@ function init() {
     $("#ticket_form").on("submit", function (e) {
         guardar(e);
     });
-
-    setInterval(function() {
-        recargarTabla();
-    });
-
 }
 
 $(document).ready(function () {
@@ -145,27 +140,18 @@ function asignar(tick_id) {
 
 }
 
-function recargarTabla() {
-    $('#ticket_data').DataTable().ajax.reload(null, false);  // Recargar tabla sin reiniciar la página
-}
-
-function guardar(e) {
+function guardar(e){
     e.preventDefault();
-    var formData = new FormData($("#ticket_form")[0]);
-
+	var formData = new FormData($("#ticket_form")[0]);
     $.ajax({
         url: "../../controller/ticket.php?op=asignar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
-        success: function (datos) {
-            $("#modalasignar").modal('hide');  // Cerrar el modal
-            $('#ticket_data').DataTable().ajax.reload(null, false);  // Recargar tabla sin reiniciar la página actual
-            console.log("Ticket asignado correctamente");
-        },
-        error: function(xhr, status, error) {
-            console.error("Error en la asignación: ", status, error);  // Manejo de errores
+        success: function(datos){
+            $("#modalasignar").modal('hide');
+            $('#ticket_data').DataTable().ajax.reload();
         }
     });
 }
