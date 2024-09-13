@@ -8,9 +8,6 @@ function init() {
     });
 }
 
-
-
-
 $(document).ready(function () {
 
     $.post("../../controller/usuario.php?op=combo", function (data) {
@@ -141,6 +138,8 @@ function asignar(tick_id) {
         $("#modalasignar").modal('show');
     });
 
+}
+
     function guardar(e) {
         e.preventDefault();
         var formData = new FormData($("#ticket_form")[0]);
@@ -156,6 +155,6 @@ function asignar(tick_id) {
             }
         });
     }
-}
+
 
 init();
