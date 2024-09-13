@@ -140,16 +140,16 @@ function asignar(tick_id) {
 
 }
 
-function guardar(e){
+function guardar(e) {
     e.preventDefault();
-	var formData = new FormData($("#ticket_form")[0]);
+    var formData = new FormData($("#ticket_form")[0]);
     $.ajax({
         url: "../../controller/ticket.php?op=asignar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
-        success: function(datos){
+        success: function (datos) {
             $("#modalasignar").modal('hide');
             $('#ticket_data').DataTable().ajax.reload();
         }
