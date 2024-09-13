@@ -150,6 +150,7 @@ function guardar(e) {
         contentType: false,
         processData: false,
         success: function (datos) {
+            console.log('Modal closed and data reloaded.');
             $("#modalasignar").modal('hide');
             $('#ticket_data').DataTable().ajax.reload();
         }
