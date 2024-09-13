@@ -150,10 +150,29 @@ function guardar(e) {
         contentType: false,
         processData: false,
         success: function (datos) {
+            $("#modalasignar").modal('hide');  // Cerrar el modal después de asignar
+            location.reload();  // Recargar la página completamente
+        },
+        error: function(xhr, status, error) {
+            console.error("Error en la asignación: ", status, error);  // Manejo de errores
+        }
+    });
+}
+
+/* function guardar(e) {
+    e.preventDefault();
+    var formData = new FormData($("#ticket_form")[0]);
+    $.ajax({
+        url: "../../controller/ticket.php?op=asignar",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (datos) {
             $("#modalasignar").modal('hide');
             $('#ticket_data').DataTable().ajax.reload();
         }
     });
-}
+} */
 
 init();
