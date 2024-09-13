@@ -3,7 +3,9 @@ var usu_id = $('#user_idx').val();
 var rol_id = $('#rol_idx').val();
 
 function init() {
-
+    $("#ticket_form").on("submit", function (e) {
+        guardar(e);
+    });
 }
 
 
@@ -139,8 +141,21 @@ function asignar(tick_id) {
         $("#modalasignar").modal('show');
     });
 
-
-
+    function guardar(e) {
+        e.preventDefault();
+        var formData = new FormData($("#ticket_form")[0]);
+        $.ajax({
+            url: "../../controller/ticket.php?op=asignar",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (datos) {
+                $("#modalasignar").modal('hide');
+                $('#ticket_data').DataTable().ajax.reload();
+            }
+        });
+    }
 }
 
 init();
