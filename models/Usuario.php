@@ -93,7 +93,17 @@ class Usuario extends Conectar
     {
         $conectar = parent::Conexion();
         parent::set_names();
-        $sql = "call sp_l_usuario_01";  
+        $sql = "call sp_l_usuario_01";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+
+    public function get_usuario_x_rol()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT * FROM tm_usuario where est=1 and rol_id=2";
         $sql = $conectar->prepare($sql);
         $sql->execute();
         return $resultado = $sql->fetchAll();
