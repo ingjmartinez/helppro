@@ -6,6 +6,11 @@ function init() {
     $("#ticket_form").on("submit", function (e) {
         guardar(e);
     });
+
+    setInterval(function() {
+        recargarTabla();
+    });
+
 }
 
 $(document).ready(function () {
@@ -138,6 +143,10 @@ function asignar(tick_id) {
         $("#modalasignar").modal('show');
     });
 
+}
+
+function recargarTabla() {
+    $('#ticket_data').DataTable().ajax.reload(null, false);  // Recargar tabla sin reiniciar la página
 }
 
 function guardar(e) {
