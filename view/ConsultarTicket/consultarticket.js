@@ -140,30 +140,19 @@ function asignar(tick_id) {
 
 }
 
-function guardar(e) {
+function guardar(e){
     e.preventDefault();
-    var formData = new FormData($("#ticket_form")[0]);
-
+	var formData = new FormData($("#ticket_form")[0]);
     $.ajax({
         url: "../../controller/ticket.php?op=asignar",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
-        success: function(datos) {
-            console.log(datos);  // Para depuración
-            $("#modalasignar").modal('hide');  // Cerrar modal
-            table.ajax.reload(null, false);  // Recargar tabla sin reiniciar la página
-            console.log('Tabla recargada exitosamente');
-        },
-        error: function(xhr, status, error) {
-            console.error("Error en el guardado: ", status, error);
+        success: function(datos){
+            $("#modalasignar").modal('hide');
+            $('#ticket_data').DataTable().ajax.reload();
         }
     });
 }
-
-// Asignar la función 'guardar' al evento submit del formulario
-$("#ticket_form").on("submit", guardar);
-
-
 init();
