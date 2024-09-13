@@ -143,6 +143,7 @@ function asignar(tick_id) {
 function guardar(e) {
     e.preventDefault();
     var formData = new FormData($("#ticket_form")[0]);
+
     $.ajax({
         url: "../../controller/ticket.php?op=asignar",
         type: "POST",
@@ -150,14 +151,16 @@ function guardar(e) {
         contentType: false,
         processData: false,
         success: function (datos) {
-            $("#modalasignar").modal('hide');  // Cerrar el modal después de asignar
-            location.reload();  // Recargar la página completamente
+            $("#modalasignar").modal('hide');  // Cerrar el modal
+            $('#ticket_data').DataTable().ajax.reload(null, false);  // Recargar tabla sin reiniciar la página actual
+            console.log("Ticket asignado correctamente");
         },
         error: function(xhr, status, error) {
             console.error("Error en la asignación: ", status, error);  // Manejo de errores
         }
     });
 }
+
 
 /* function guardar(e) {
     e.preventDefault();
