@@ -25,8 +25,10 @@
         public static function ruta(){
             //local
             /* return "http://localhost:90/Helppro/"; */
-            //Producion
-            return "https://helppro.tech//";
+            //Producion anterior
+           /*  return "https://helppro.tech//"; */
+                //producion actual
+            return "https://ticket.helppro.tech//";
             
         }
 

@@ -124,7 +124,7 @@ $(document).ready(function(){
 });
 
 function ver(tick_id) {
-    window.open('https://helppro.tech/view/DetalleTicket/?ID=' + tick_id + '');
+    window.open('https://ticket.helppro.tech/view/DetalleTicket/?ID=' + tick_id + '');
 }
 
 function asignar(tick_id){
