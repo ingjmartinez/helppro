@@ -73,6 +73,13 @@ $(document).ready(function () {
                 console.log(e.responseText);
             }
         },
+
+        "columns": [
+        { "data": "nombre" },  // Debe coincidir con la clave del JSON devuelto
+        { "data": "acciones", "className": "text-center" }  // Acción para el botón
+    ],
+
+
         "bDestroy": true,
         "responsive": true,
         "bInfo": true,
