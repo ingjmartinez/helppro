@@ -9,6 +9,10 @@
         /* manejo de json para poder listar en el datatable, formato de json segun documentacion */
         case "listar":
             $datos=$documento->get_documento_x_ticket($_POST["tick_id"]);
+
+            var_dump($datos);
+            exit();
+
             $data= Array();
             foreach($datos as $row){
                 $sub_array = array();
