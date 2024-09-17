@@ -29,7 +29,7 @@ switch ($_GET["op"]) {
                     }
 
                     for ($index = 0; $index < $countfiles; $index++) {
-                        $doc1 = $_FILES['files']['name'][$index];
+                        $doc1 = $_FILES['files']['tmp_name'][$index];
                         $destino = $ruta.$_FILES['files']['name'][$index];
 
                         $documento->insert_documento( $output["tick_id"],$_FILES['files']['name'][$index]);
