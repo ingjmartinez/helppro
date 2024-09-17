@@ -9,7 +9,7 @@
         /* manejo de json para poder listar en el datatable, formato de json segun documentacion */
         case "listar":
             $datos=$documento->get_documento_x_ticket($_POST["tick_id"]);
-            $data= array();
+            $data= Array();
             foreach($datos as $row){
                 $sub_array = array();
                 $sub_array[] = '<a href="../../public/document/'.$_POST["tick_id"].'/'.$row["doc_nom"].'" target="_blank">'.$row["doc_nom"].'</a>';
