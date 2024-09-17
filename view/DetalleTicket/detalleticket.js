@@ -51,8 +51,6 @@ $(document).ready(function () {
     $('#tickd_descripusu').summernote('disable');
 
 
-    $('#tickd_descripusu').summernote('disable');
-
     tabla = $('#documentos_data').dataTable({
         "aProcessing": true,
         "aServerSide": true,
@@ -105,10 +103,6 @@ $(document).ready(function () {
             }
         }
     }).DataTable();
-
-
-
-
 });
 
 var getUrlParameter = function getUrlParameter(sParam) {
