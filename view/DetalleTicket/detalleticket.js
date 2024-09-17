@@ -1,56 +1,114 @@
-function init(){
+function init() {
 
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     var tick_id = getUrlParameter('ID');
 
     listardetalle(tick_id);
 
-        // Configura la actualización automática cada 5 segundos (5000 ms)
-        setInterval(function() {
-            listardetalle(tick_id);
-        }, 5000);
+    // Configura la actualización automática cada 5 segundos (5000 ms)
+    setInterval(function () {
+        listardetalle(tick_id);
+    }, 5000);
 
-        $('#tickd_descrip').summernote({
-            height: 250,
-            lang: "es-ES",
-            callbacks: {
-                onImageUpload: function(image) {
-                    console.log("Image detect...");
-                    myimagetreat(image[0]);
-                },
-                onPaste: function (e) {
-                    console.log("Text detect...");
-                }
+    $('#tickd_descrip').summernote({
+        height: 250,
+        lang: "es-ES",
+        callbacks: {
+            onImageUpload: function (image) {
+                console.log("Image detect...");
+                myimagetreat(image[0]);
             },
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ]
-        });
+            onPaste: function (e) {
+                console.log("Text detect...");
+            }
+        },
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
+    });
 
 
-        $('#tickd_descripusu').summernote({
-            height: 400,
-            lang: "es-ES",
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ]
-        });
+    $('#tickd_descripusu').summernote({
+        height: 400,
+        lang: "es-ES",
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
+    });
 
-        $('#tickd_descripusu').summernote('disable');
+    $('#tickd_descripusu').summernote('disable');
 
-    
+
+    $('#tickd_descripusu').summernote('disable');
+
+    tabla = $('#documentos_data').dataTable({
+        "aProcessing": true,
+        "aServerSide": true,
+        dom: 'Bfrtip',
+        "searching": true,
+        lengthChange: false,
+        colReorder: true,
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ],
+        "ajax": {
+            url: '../../controller/documento.php?op=listar',
+            type: "post",
+            data: { tick_id: tick_id },
+            dataType: "json",
+            error: function (e) {
+                console.log(e.responseText);
+            }
+        },
+        "bDestroy": true,
+        "responsive": true,
+        "bInfo": true,
+        "iDisplayLength": 10,
+        "autoWidth": false,
+        "language": {
+            "sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando un total de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando un total de 0 registros",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        }
+    }).DataTable();
+
+
+
+
 });
 
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -68,24 +126,24 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-$(document).on("click","#btnenviar", function(){
+$(document).on("click", "#btnenviar", function () {
     var tick_id = getUrlParameter('ID');
     var usu_id = $('#user_idx').val();
     var tickd_descrip = $('#tickd_descrip').val();
 
-    if ($('#tickd_descrip').summernote('isEmpty')){
+    if ($('#tickd_descrip').summernote('isEmpty')) {
         swal("Advertencia!", "Falta Descripción", "warning");
-    }else{
-        $.post("../../controller/ticket.php?op=insertdetalle", {tick_id:tick_id,usu_id:usu_id,tickd_descrip:tickd_descrip}, function (data) {
+    } else {
+        $.post("../../controller/ticket.php?op=insertdetalle", { tick_id: tick_id, usu_id: usu_id, tickd_descrip: tickd_descrip }, function (data) {
             listardetalle(tick_id);
             $('#tickd_descrip').summernote('reset');
             swal("Correcto!", "Registrado Correctamente", "success");
-         });
+        });
     }
 
 });
 
-$(document).on("click","#btncerrarticket", function(){
+$(document).on("click", "#btncerrarticket", function () {
     swal({
         title: "HelpPro",
         text: "Esta seguro de Cerrar el Ticket?",
@@ -96,50 +154,50 @@ $(document).on("click","#btncerrarticket", function(){
         cancelButtonText: "No",
         closeOnConfirm: false
     },
-    function(isConfirm) {
-        if (isConfirm) {
-            var tick_id = getUrlParameter('ID');
-            var usu_id = $('#user_idx').val();
-            $.post("../../controller/ticket.php?op=update", { tick_id : tick_id,usu_id : usu_id }, function (data) {
-                listardetalle(tick_id);
-            }); 
-            
-            
-           
-            swal({
-                title: "HelpPro!",
-                text: "Ticket Cerrado correctamente.",
-                type: "success",
-                confirmButtonClass: "btn-success"
-            });
-        }
-    });
-});
-    
-function listardetalle(tick_id){
-    $.post("../../controller/ticket.php?op=listardetalle", { tick_id : tick_id }, function (data) {
-        $('#lbldetalle').html(data);
- 
-         });
+        function (isConfirm) {
+            if (isConfirm) {
+                var tick_id = getUrlParameter('ID');
+                var usu_id = $('#user_idx').val();
+                $.post("../../controller/ticket.php?op=update", { tick_id: tick_id, usu_id: usu_id }, function (data) {
+                    listardetalle(tick_id);
+                });
 
-         $.post("../../controller/ticket.php?op=mostrar", { tick_id : tick_id }, function (data) {
-            data = JSON.parse(data);
-            $('#lblestado').html(data.tick_estado);
-            $('#lblnomusuario').html(data.usu_nom +' '+data.usu_ape);
-            $('#lblfechcrea').html(data.fech_crea);
-    
-            $('#lblnoidticket').html("Detalle Ticket - "+data.tick_id);
-    
-            $('#cat_nom').val(data.cat_nom);
-            $('#tick_titulo').val(data.tick_titulo);
-            $('#tickd_descripusu').summernote ('code', data.tick_descrip); 
-    
-        
-            if (data.tick_estado_texto == "Cerrado"){
-                $('#pnldetalle').hide();      
-            }       
-            
+
+
+                swal({
+                    title: "HelpPro!",
+                    text: "Ticket Cerrado correctamente.",
+                    type: "success",
+                    confirmButtonClass: "btn-success"
+                });
+            }
         });
+});
+
+function listardetalle(tick_id) {
+    $.post("../../controller/ticket.php?op=listardetalle", { tick_id: tick_id }, function (data) {
+        $('#lbldetalle').html(data);
+
+    });
+
+    $.post("../../controller/ticket.php?op=mostrar", { tick_id: tick_id }, function (data) {
+        data = JSON.parse(data);
+        $('#lblestado').html(data.tick_estado);
+        $('#lblnomusuario').html(data.usu_nom + ' ' + data.usu_ape);
+        $('#lblfechcrea').html(data.fech_crea);
+
+        $('#lblnoidticket').html("Detalle Ticket - " + data.tick_id);
+
+        $('#cat_nom').val(data.cat_nom);
+        $('#tick_titulo').val(data.tick_titulo);
+        $('#tickd_descripusu').summernote('code', data.tick_descrip);
+
+
+        if (data.tick_estado_texto == "Cerrado") {
+            $('#pnldetalle').hide();
+        }
+
+    });
 
 
 }
