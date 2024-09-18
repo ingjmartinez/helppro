@@ -1,7 +1,7 @@
 <?php
     /* llamada a las clases necesarias */
     require_once("../config/conexion.php");
-    require_once("../models/documento.php");
+    require_once("../models/Documento.php");
     $documento = new Documento();
 
     /* opciones del controlador */
@@ -9,9 +9,6 @@
         /* manejo de json para poder listar en el datatable, formato de json segun documentacion */
         case "listar":
             $datos=$documento->get_documento_x_ticket($_POST["tick_id"]);
-
-            var_dump($datos);
-            exit();
 
             $data= Array();
             foreach($datos as $row){
