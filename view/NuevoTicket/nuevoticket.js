@@ -52,6 +52,7 @@ function guardaryeditar(e) {
             contentType: false,
             processData: false,
             success: function (datos) {
+                datos = JSON.parse(datos);
                 if ("error" in datos) {
                     swal("Error!", datos.error, "error");
                     return
