@@ -37,8 +37,7 @@ switch ($_GET["op"]) {
                         move_uploaded_file($doc1, $destino);
                     }
                 } else {
-                    echo json_encode(["error" => "No hay documentos"]);
-                    exit;
+                    $documento->insert_documento($output["tick_id"], "");
                 }
             }
         }
