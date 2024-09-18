@@ -34,7 +34,6 @@ $(document).ready(function () {
         ]
     });
 
-
     $('#tickd_descripusu').summernote({
         height: 400,
         lang: "es-ES",
@@ -49,7 +48,6 @@ $(document).ready(function () {
     });
 
     $('#tickd_descripusu').summernote('disable');
-
 
     tabla = $('#documentos_data').dataTable({
         "aProcessing": true,

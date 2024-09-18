@@ -52,7 +52,11 @@ function guardaryeditar(e) {
             contentType: false,
             processData: false,
             success: function (datos) {
-                console.log(datos);
+                if ("error" in datos) {
+                    swal("Error!", datos.error, "error");
+                    return
+                }
+
                 $('#tick_titulo').val('');
                 $('#tick_descrip').summernote('reset');
                 swal("Correcto!", "Registrado Correctamente", "success");
