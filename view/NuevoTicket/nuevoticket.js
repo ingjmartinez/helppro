@@ -51,11 +51,11 @@ function guardaryeditar(e) {
             data: formData,
             contentType: false,
             processData: false,
-            success: function (datos) {
-                datos = JSON.parse(datos);
-                console.log(datos[0].tick_id);
-                if ("error" in datos) {
-                    swal("Error!", datos.error, "error");
+            success: function (data) {
+                datos = JSON.parse(data);
+                console.log(data[0].tick_id);
+                if ("error" in data) {
+                    swal("Error!", data.error, "error");
                     return
                 }
 
