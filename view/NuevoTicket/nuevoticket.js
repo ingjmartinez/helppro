@@ -59,6 +59,10 @@ function guardaryeditar(e) {
                     return
                 }
 
+                $.post("../../controller/email.php?op=ticket_abierto", {tick_id : datos[0].tick_id}, function (datos) {
+
+                });
+
                 $('#tick_titulo').val('');
                 $('#tick_descrip').summernote('reset');
                 swal("Correcto!", "Registrado Correctamente", "success");
