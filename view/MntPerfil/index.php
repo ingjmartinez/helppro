@@ -37,31 +37,27 @@ if (isset($_SESSION["usu_id"])) {
                 <div class="box-typical box-typical-padding">
 
                     <div class="row">
-                        <form method="post" id="ticket_form">
 
-                            <input type="hidden" id="usu_id" name="usu_id" value="<?php echo $_SESSION["usu_id"] ?>">
+                        <div class="col-lg-6">
+                            <fieldset class="form-group">
+                                <label class="form-label semibold" for="exampleInput">Nueva Contraseña</label>
+                                <input type="password" class="form-control" id="txtpass" name="txtpass">
 
-                            <div class="col-lg-6">
-                                <fieldset class="form-group">
-                                    <label class="form-label semibold" for="exampleInput">Nueva Contraseña</label>
-                                    <input type="text" class="form-control" id="txtpass" name="txtpass">
+                                </select>
+                            </fieldset>
+                        </div>
 
-                                    </select>
-                                </fieldset>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <fieldset class="form-group">
-                                    <label class="form-label semibold" for="exampleInput">Confirmar Contraseña</label>
-                                    <input type="text" class="form-control" id="txtpassnew" name="txtpassnew">
-                                </fieldset>
-                            </div>
+                        <div class="col-lg-6">
+                            <fieldset class="form-group">
+                                <label class="form-label semibold" for="exampleInput">Confirmar Contraseña</label>
+                                <input type="password" class="form-control" id="txtpassnew" name="txtpassnew">
+                            </fieldset>
+                        </div>
 
 
-                            <div class="col-lg-12">
-                                <button type="submit" name="action" value="add" class="btn btn-rounded btn-inline btn-primary">Actualizar</button>
-                            </div>
-                        </form>
+                        <div class="col-lg-12">
+                            <button type="button" id="btnactualizar" class="btn btn-rounded btn-inline btn-primary">Actualizar</button>
+                        </div>
 
                     </div>
                 </div>
