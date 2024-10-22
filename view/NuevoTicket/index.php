@@ -56,7 +56,7 @@ if (isset($_SESSION["usu_id"])) {
 							<div class="col-lg-4">
 								<fieldset class="form-group">
 									<label class="form-label semibold" for="exampleInput">Categoria</label>
-									<select id="cat_id" name="cat_id" class="form-control">
+									<select id="cat_id" name="cat_id" class="form-control" data-placeholder="Selecional">
 
 									</select>
 								</fieldset>
@@ -65,7 +65,8 @@ if (isset($_SESSION["usu_id"])) {
 							<div class="col-lg-4">
 								<fieldset class="form-group">
 									<label class="form-label semibold" for="exampleInput">SubCategoria</label>
-									<select id="cats_id" name="cats_id" class="form-control">
+									<select id="cats_id" name="cats_id" class="form-control" data-placeholder="Selecional">
+										<option label="Selecional"></option>
 
 									</select>
 								</fieldset>
