@@ -160,4 +160,9 @@ function guardar(e) {
     });
 }
 
+function CambiarEstado(tick_id) {
+    console.log(tick_id);
+}
+
+
 init();

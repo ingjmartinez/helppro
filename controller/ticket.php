@@ -66,7 +66,7 @@ switch ($_GET["op"]) {
             if ($row["tick_estado"] == "Abierto") {
                 $sub_array[] = '<span class="label label-pill label-success">Abierto</span>';
             } else {
-                $sub_array[] = '<span class="label label-pill label-danger">Cerrado</span>';
+                $sub_array[] = '<a onClick="CambiarEstado('.$row["tick_id"].')"><span class="label label-pill label-danger">Cerrado</span></a>';
             }
             $sub_array[] = date("d/m/Y H:i:s", strtotime($row["fech_crea"]));
 
@@ -109,7 +109,7 @@ switch ($_GET["op"]) {
             if ($row["tick_estado"] == "Abierto") {
                 $sub_array[] = '<span class="label label-pill label-success">Abierto</span>';
             } else {
-                $sub_array[] = '<span class="label label-pill label-danger">Cerrado</span>';
+                $sub_array[] = '<a onClick="CambiarEstado('.$row["tick_id"].')"><span class="label label-pill label-danger">Cerrado</span>';
             }
 
             $sub_array[] = date("d/m/Y H:i:s", strtotime($row["fech_crea"]));
