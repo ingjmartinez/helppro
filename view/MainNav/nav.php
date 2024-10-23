@@ -70,7 +70,7 @@ if ($_SESSION["rol_id"] == 1) {
                     <span class="lbl">Consultar Ticket</span>
                 </a>
             </li>
-            <li class="grey with-sub">
+        <!--     <li class="grey with-sub">
                 <span>
                     <i class="font-icon font-icon-dashboard"></i>
                     <span class="lbl">Dashboard</span>
@@ -79,7 +79,7 @@ if ($_SESSION["rol_id"] == 1) {
                     <li><a href="index.html"><span class="lbl">Default</span><span class="label label-custom label-pill label-danger">new</span></a></li>
                     <li><a href="dashboard-top-menu.html"><span class="lbl">Top menu</span></a></li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
     </nav>
 <?php
