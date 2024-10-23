@@ -21,7 +21,7 @@ class Ticket extends Conectar
         return $resultado = $sql1->fetchAll(pdo::FETCH_ASSOC);
     }
 
-    public function listar_ticket_x_usu($usu_id)
+    public function listar_ticket_x_usu($usu_id, $tipo)
     {
         $conectar = parent::Conexion();
         parent::set_names();
@@ -44,9 +44,11 @@ class Ticket extends Conectar
                 INNER join tm_usuario on tm_ticket.usu_id = tm_usuario.usu_id
                 WHERE
                 tm_ticket.est = 1 
-                AND tm_usuario.usu_id=?";
+                AND tm_usuario.usu_id=?
+                AND tm_ticket.tick_estado = ?";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $usu_id);
+        $sql->bindValue(2, $tipo);
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }

@@ -13,7 +13,7 @@ $(document).ready(function () {
     $.post("../../controller/usuario.php?op=combo", function (data) {
         $('#usu_asig').html(data);
     });
-
+    let tipoTicket = $("#tipoTicket").val();
     if (rol_id == 1) {
         tabla = $('#ticket_data').dataTable({
             "aProcessing": true,
@@ -32,7 +32,7 @@ $(document).ready(function () {
                 url: '../../controller/ticket.php?op=listar_x_usu',
                 type: "post",
                 dataType: "json",
-                data: { usu_id: usu_id },
+                data: { usu_id, tipoTicket },
                 error: function (e) {
                     console.log(e.responseText);
                 }
@@ -160,7 +160,7 @@ function guardar(e) {
     });
 }
 
-function CambiarEstado(tick_id){
+function CambiarEstado(tick_id) {
     swal({
         title: "HelpDesk",
         text: "Esta seguro de Reabrir el Ticket?",
@@ -171,22 +171,22 @@ function CambiarEstado(tick_id){
         cancelButtonText: "No",
         closeOnConfirm: false
     },
-    function(isConfirm) {
-        if (isConfirm) {
-            $.post("../../controller/ticket.php?op=reabrir", {tick_id : tick_id,usu_id : usu_id}, function (data) {
+        function (isConfirm) {
+            if (isConfirm) {
+                $.post("../../controller/ticket.php?op=reabrir", { tick_id: tick_id, usu_id: usu_id }, function (data) {
 
-            });
+                });
 
-            $('#ticket_data').DataTable().ajax.reload();	
+                $('#ticket_data').DataTable().ajax.reload();
 
-            swal({
-                title: "HelpDesk!",
-                text: "Ticket Abierto.",
-                type: "success",
-                confirmButtonClass: "btn-success"
-            });
-        }
-    });
+                swal({
+                    title: "HelpDesk!",
+                    text: "Ticket Abierto.",
+                    type: "success",
+                    confirmButtonClass: "btn-success"
+                });
+            }
+        });
 }
 
 
