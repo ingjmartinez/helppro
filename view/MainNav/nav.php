@@ -59,7 +59,7 @@ if ($_SESSION["rol_id"] == 1) {
                 </a>
             </li>
 
-            <li class="blue-dirty">
+            <li class="blue-dirty with-sub">
                 <a href="..\ConsultarTicket\">
                     <span class="glyphicon glyphicon-th"></span>
                     <span class="lbl">Consultar Ticket</span>
