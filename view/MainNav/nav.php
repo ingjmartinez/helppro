@@ -16,6 +16,13 @@ if ($_SESSION["rol_id"] == 1) {
                 </a>
             </li>
 
+            <li class="blue-dirty">
+                <a href="..\Faltantes\">
+                    <span class="glyphicon glyphicon-th"></span>
+                    <span class="lbl">Reportes BI</span>
+                </a>
+            </li>
+
             <li class="blue-dirty with-sub">
                 <span>
                     <i class="glyphicon glyphicon-th"></i>
@@ -33,13 +40,6 @@ if ($_SESSION["rol_id"] == 1) {
                         </a>
                     </li>
                 </ul>
-            </li>
-
-            <li class="blue-dirty">
-                <a href="..\Faltantes\">
-                    <span class="glyphicon glyphicon-th"></span>
-                    <span class="lbl">Reportes BI</span>
-                </a>
             </li>
         </ul>
     </nav>

@@ -5,7 +5,7 @@ if (isset($_SESSION["usu_id"])) {
     <!DOCTYPE html>
     <html>
     <?php require_once("../MainHead/head.php"); ?>
-    <title>HelpPro</>::Consultar Ticket</title>
+    <title>HelpPro</>::Reporte BI</title>
     </head>
 
     <body class="with-side-menu">
@@ -24,10 +24,10 @@ if (isset($_SESSION["usu_id"])) {
                     <div class="tbl">
                         <div class="tbl-row">
                             <div class="tbl-cell">
-                                <h3>Consultar Ticket</h3>
+                                <h3>Reporte BI</h3>
                                 <ol class="breadcrumb breadcrumb-simple">
                                     <li><a href="#">Home</a></li>
-                                    <li class="active">Consultar Ticket</li>
+                                    <li class="active">Reporte BI</li>
                                 </ol>
                             </div>
                         </div>
