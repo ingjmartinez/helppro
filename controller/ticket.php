@@ -60,7 +60,7 @@ switch ($_GET["op"]) {
         break;
 
     case "listar_x_usu":
-        $tipo = ($_POST["tipo"] == 1) ? "Abierto" : "Cerrado";
+        $tipo = ($_POST["tipoTicket"] == 1) ? "Abierto" : "Cerrado";
         $datos = $ticket->listar_ticket_x_usu($_POST["usu_id"], $tipo);
         $data = array();
         foreach ($datos as $row) {
