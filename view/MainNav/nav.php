@@ -40,6 +40,12 @@ if ($_SESSION["rol_id"] == 1) {
                         </a>
                     </li>
                 </ul>
+                    <li class="blue-dirty">
+                        <a href="..\Faltantes\">
+                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="lbl">Reportes BI</span>
+                        </a>
+                    </li>
             </li>
         </ul>
     </nav>
