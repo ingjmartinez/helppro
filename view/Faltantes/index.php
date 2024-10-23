@@ -35,7 +35,8 @@ if (isset($_SESSION["usu_id"])) {
                 </header>
 
                 <div class="box-typical box-typical-padding">
-                    <iframe title="INFORME DE FALTANTE" width="100%" height="900" src="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGI2ZmUtMzAyNy00ZDY1LTllZjMtMTc2OWEyZDI5NjUwIiwidCI6IjU0OGNhODQyLTdiMzctNDEzNi1hYTY1LTZkMDljYzRlYzc0OSIsImMiOjJ9" frameborder="0" allowFullScreen="true"></iframe>
+                    <<!-- iframe title="INFORME DE FALTANTE" width="100%" height="900" src="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGI2ZmUtMzAyNy00ZDY1LTllZjMtMTc2OWEyZDI5NjUwIiwidCI6IjU0OGNhODQyLTdiMzctNDEzNi1hYTY1LTZkMDljYzRlYzc0OSIsImMiOjJ9" frameborder="0" allowFullScreen="true"></iframe> -->
+                    <iframe title="INFORME DE FALTANTE" width="100%" height="900" src="https://app.powerbi.com/view?r=eyJrIjoiYzFmZjk4ZjgtMmQ1Mi00OTNlLThjMGEtYjk1ZThhNGIwMWVkIiwidCI6IjU0OGNhODQyLTdiMzctNDEzNi1hYTY1LTZkMDljYzRlYzc0OSIsImMiOjJ9" frameborder="0" allowFullScreen="true"></iframe>
                 </div>
             </div>
         </div>
