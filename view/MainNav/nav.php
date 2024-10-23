@@ -23,14 +23,24 @@ if ($_SESSION["rol_id"] == 1) {
                 </a>
             </li>
 
-            <li class="grey with-sub">
+            <li class="blue-dirty">
                 <span>
-                    <i class="font-icon font-icon-dashboard"></i>
-                    <span class="lbl">Dashboard</span>
+                    <i class="glyphicon glyphicon-th"></i>
+                    <span class="lbl">Consultar Ticket</span>
                 </span>
                 <ul>
-                    <li><a href="index.html"><span class="lbl">Default</span><span class="label label-custom label-pill label-danger">new</span></a></li>
-                    <li><a href="dashboard-top-menu.html"><span class="lbl">Top menu</span></a></li>
+                    <li>
+                        <a href="..\ConsultarTicket\?tipo=1">
+                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="lbl">Tickets Abiertos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="..\ConsultarTicket\?tipo=2">
+                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="lbl">Tickets Cerrados</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
