@@ -32,6 +32,11 @@ if ($_SESSION["rol_id"] == 1) {
                             <span class="lbl">Tickets Cerrados</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="..\Faltantes\">
+                            <span class="lbl">Tickets Faltantes</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
