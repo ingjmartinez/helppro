@@ -66,8 +66,9 @@ if ($_SESSION["rol_id"] == 1) {
                 </a> -->
 
                 <span>
-                    <i class="glyphicon glyphicon-th"></i>
-                    <span class="lbl">Consultar Ticket</span>
+                    <a href="..\ConsultarTicket\">
+                        <i class="glyphicon glyphicon-th"></i>
+                        <span class="lbl">Consultar Ticket</span>
                 </span>
             </li>
             <ul>
