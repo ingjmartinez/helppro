@@ -66,10 +66,12 @@ class Ticket extends Conectar
                 tm_usuario.usu_nom,
                 tm_usuario.usu_ape,
                 tm_usuario.usu_correo,
-                tm_categoria.cat_nom
+                tm_categoria.cat_nom,
+                tm_subcategoria.cats_nom
                 FROM 
                 tm_ticket
                 INNER join tm_categoria on tm_ticket.cat_id = tm_categoria.cat_id
+                INNER join tm_subcategoria on tm_ticket.cats_id = tm_subcategoria.cats_id
                 INNER join tm_usuario on tm_ticket.usu_id = tm_usuario.usu_id
                 WHERE
                 tm_ticket.est = 1

@@ -221,6 +221,7 @@ switch ($_GET["op"]) {
                 $output["usu_nom"] = $row["usu_nom"];
                 $output["usu_ape"] = $row["usu_ape"];
                 $output["cat_nom"] = $row["cat_nom"];
+                $output["cats_nom"] = $row["cats_nom"];
             }
             echo json_encode($output);
         }
