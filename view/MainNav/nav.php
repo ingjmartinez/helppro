@@ -60,10 +60,15 @@ if ($_SESSION["rol_id"] == 1) {
             </li>
 
             <li class="blue-dirty with-sub">
-                <a href="..\ConsultarTicket\">
+                <!--  <a href="..\ConsultarTicket\">
                     <span class="glyphicon glyphicon-th"></span>
                     <span class="lbl">Consultar Ticket</span>
-                </a>
+                </a> -->
+
+                <span>
+                    <i class="glyphicon glyphicon-th"></i>
+                    <span class="lbl">Consultar Ticket</span>
+                </span>
             </li>
             <ul>
                 <li>
