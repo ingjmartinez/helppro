@@ -16,7 +16,7 @@ if ($_SESSION["rol_id"] == 1) {
                 </a>
             </li>
 
-            <li class="blue-dirty">
+            <li class="blue-dirty with-sub">
                 <span>
                     <i class="glyphicon glyphicon-th"></i>
                     <span class="lbl">Consultar Ticket</span>
@@ -24,13 +24,11 @@ if ($_SESSION["rol_id"] == 1) {
                 <ul>
                     <li>
                         <a href="..\ConsultarTicket\?tipo=1">
-                            <span class="glyphicon glyphicon-th"></span>
                             <span class="lbl">Tickets Abiertos</span>
                         </a>
                     </li>
                     <li>
                         <a href="..\ConsultarTicket\?tipo=2">
-                            <span class="glyphicon glyphicon-th"></span>
                             <span class="lbl">Tickets Cerrados</span>
                         </a>
                     </li>
