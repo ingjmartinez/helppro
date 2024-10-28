@@ -14,7 +14,7 @@ date_default_timezone_set('America/Santo_Domingo');
 switch ($_GET["op"]) {
 
     case "insert":
-        $datos = $ticket->insert_ticket($_POST["usu_id"], $_POST["cat_id"], $_POST["cats_id"], $_POST["tick_titulo"], $_POST["tick_descrip"]);
+        $datos = $ticket->insert_ticket($_POST["usu_id"], $_POST["cat_id"], $_POST["cats_id"], $_POST["tick_titulo"], $_POST["tick_descrip"], $_POST["prio_id"]);
         if (is_array($datos) == true and count($datos) > 0) {
             foreach ($datos as $row) {
                 $output["tick_id"] = $row["tick_id"];
@@ -69,6 +69,8 @@ switch ($_GET["op"]) {
             $sub_array[] = $row["cat_nom"];
             $sub_array[] = $row["tick_titulo"];
 
+            $sub_array[] = $row["prio_nom"];
+
             if ($row["tick_estado"] == "Abierto") {
                 $sub_array[] = '<span class="label label-pill label-success">Abierto</span>';
             } else {
@@ -80,6 +82,12 @@ switch ($_GET["op"]) {
                 $sub_array[] = '<span class="label label-pill label-default">Sin Asignar</span>';
             } else {
                 $sub_array[] = date("d/m/Y H:i:s", strtotime($row["fech_asig"]));
+            }
+
+            if($row["fech_cierre"]==null){
+                $sub_array[] = '<span class="label label-pill label-default">Sin Cerrar</span>';
+            }else{
+                $sub_array[] = date("d/m/Y H:i:s", strtotime($row["fech_cierre"]));
             }
 
             if ($row["usu_asig"] == null) {
@@ -111,6 +119,7 @@ switch ($_GET["op"]) {
             $sub_array[] = $row["tick_id"];
             $sub_array[] = $row["cat_nom"];
             $sub_array[] = $row["tick_titulo"];
+            $sub_array[] = $row["prio_nom"];
 
             if ($row["tick_estado"] == "Abierto") {
                 $sub_array[] = '<span class="label label-pill label-success">Abierto</span>';
@@ -124,6 +133,12 @@ switch ($_GET["op"]) {
                 $sub_array[] = '<span class="label label-pill label-default">Sin Asignar</span>';
             } else {
                 $sub_array[] = date("d/m/Y H:i:s", strtotime($row["fech_asig"]));
+            }
+
+            if($row["fech_cierre"]==null){
+                $sub_array[] = '<span class="label label-pill label-default">Sin Cerrar</span>';
+            }else{
+                $sub_array[] = date("d/m/Y H:i:s", strtotime($row["fech_cierre"]));
             }
 
             if ($row["usu_asig"] == null) {
@@ -219,10 +234,14 @@ switch ($_GET["op"]) {
                 $output["tick_estado_texto"] = $row["tick_estado"];
 
                 $output["fech_crea"] = date("d/m/Y H:i:s", strtotime($row["fech_crea"]));
+                $output["fech_cierre"] = date("d/m/Y H:i:s", strtotime($row["fech_cierre"]));
                 $output["usu_nom"] = $row["usu_nom"];
                 $output["usu_ape"] = $row["usu_ape"];
                 $output["cat_nom"] = $row["cat_nom"];
                 $output["cats_nom"] = $row["cats_nom"];
+                $output["tick_estre"] = $row["tick_estre"];
+                $output["tick_coment"] = $row["tick_coment"];
+                $output["prio_nom"] = $row["prio_nom"];
             }
             echo json_encode($output);
         }
@@ -266,6 +285,10 @@ switch ($_GET["op"]) {
     case "grafico";
         $datos = $ticket->get_ticket_grafico();
         echo json_encode($datos);
+        break;
+
+    case "encuesta":
+        $ticket->insert_encuesta($_POST["tick_id"], $_POST["tick_estre"], $_POST["tick_coment"]);
         break;
 }
 ?>

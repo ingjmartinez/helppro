@@ -181,6 +181,7 @@ function listardetalle(tick_id) {
         $('#lblestado').html(data.tick_estado);
         $('#lblnomusuario').html(data.usu_nom + ' ' + data.usu_ape);
         $('#lblfechcrea').html(data.fech_crea);
+      
 
         $('#lblnoidticket').html("Detalle Ticket - " + data.tick_id);
 
@@ -189,6 +190,7 @@ function listardetalle(tick_id) {
         $('#tick_titulo').val(data.tick_titulo);
         $('#tickd_descripusu').summernote('code', data.tick_descrip);
 
+        $('#prio_nom').val(data.prio_nom);
 
         if (data.tick_estado_texto == "Cerrado") {
             $('#pnldetalle').hide();
