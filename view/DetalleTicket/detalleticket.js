@@ -154,7 +154,7 @@ $(document).on("click", "#btncerrarticket", function () {
                     listardetalle(tick_id);
                 });
 
-                $.post("../../controller/email.php?op=ticket_cerrado", {tick_id : datos[0].tick_id}, function (datos) {
+                $.post("../../controller/email.php?op=ticket_cerrado", {tick_id : tick_id}, function (datos) {
 
                 });
 
