@@ -106,12 +106,14 @@ switch ($_GET["op"]) {
             "sEcho" => 1,
             "iTotalRecords" => count($data),
             "iTotalDisplayRecords" => count($data),
-            "aaData" => $data
+            "aaData" => $data,
+            "datos" => $datos
         );
         echo json_encode($results);
         break;
 
     case "listar":
+        $tipo = ($_POST["tipoTicket"] == 1) ? "Abierto" : "Cerrado";
         $datos = $ticket->listar_ticket();
         $data = array();
         foreach ($datos as $row) {

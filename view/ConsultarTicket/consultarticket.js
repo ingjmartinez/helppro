@@ -84,6 +84,7 @@ $(document).ready(function () {
             "ajax": {
                 url: '../../controller/ticket.php?op=listar',
                 type: "post",
+                data: { tipoTicket },
                 dataType: "json",
                 error: function (e) {
                     console.log(e.responseText);
