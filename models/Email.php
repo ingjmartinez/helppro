@@ -43,7 +43,7 @@ class Email extends PHPMailer
 
         $this->CharSet = 'UTF8';
         $this->addAddress($correo);
-        $this->addAddress($_SESSION["usu_email"]);
+        /* $this->addAddress($_SESSION["usu_email"]); */
         $this->IsHTML(true);
         $this->Subject = "Ticket Abierto";
         //Igual//
