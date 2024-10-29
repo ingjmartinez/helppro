@@ -150,7 +150,7 @@ function guardar(e) {
         processData: false,
         success: function (datos) {
             var tick_id = $('#tick_id').val();
-            $.post("../../controller/email.php?op=ticket_asignado", { tick_id: datos[0].tick_id }, function (datos) {
+            $.post("../../controller/email.php?op=ticket_asignado", { tick_id: tick_id }, function (datos) {
 
             });
 
