@@ -79,7 +79,7 @@ class Email extends PHPMailer
 
         //IGual//
         $this->IsSMTP();
-        $this->Host = 'smtp.office365.com'; //Aqui el server
+        $this->Host = 'smtp.hostinger.com'; //Aqui el server
         $this->Port = 587; //Aqui el puerto
         $this->SMTPAuth = true;
         $this->Username = $this->gCorreo;
@@ -126,7 +126,7 @@ class Email extends PHPMailer
 
         //IGual//
         $this->IsSMTP();
-        $this->Host = 'smtp.office365.com'; //Aqui el server
+        $this->Host = 'smtp.hostinger.com'; //Aqui el server
         $this->Port = 587; //Aqui el puerto
         $this->SMTPAuth = true;
         $this->Username = $this->gCorreo;
