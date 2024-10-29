@@ -67,7 +67,7 @@ if (isset($_SESSION["usu_id"])) {
 
         <?php require_once("../MainJs/js.php"); ?>
 
-        <script type="text/javascript" src="mntperfil.js"></script>
+        <script type="text/javascript" src="mntperfil.js?v=1.5"></script>
 
 
 

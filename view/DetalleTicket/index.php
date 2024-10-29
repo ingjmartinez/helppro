@@ -134,7 +134,7 @@ if (isset($_SESSION["usu_id"])) {
 
 		<?php require_once("../MainJs/js.php"); ?>
 
-		<script type="text/javascript" src="detalleticket.js?v=1.4"></script>
+		<script type="text/javascript" src="detalleticket.js?v=1.5"></script>
 
 
 

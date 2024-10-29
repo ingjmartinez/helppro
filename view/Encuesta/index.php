@@ -123,7 +123,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
 <script src="../../public/js/lib/bootstrap-sweetalert/sweetalert.min.js"></script>
-<script type="text/javascript" src="encuesta.js"></script>
+<script type="text/javascript" src="encuesta.js?v=1.5"></script>
 <script>
     $('#tick_estre').rating({ 
         showCaption: false

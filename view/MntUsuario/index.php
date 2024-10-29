@@ -60,7 +60,7 @@
 
 	<?php require_once("../MainJs/js.php");?>
 	
-	<script type="text/javascript" src="mntusuario.js"></script>
+	<script type="text/javascript" src="mntusuario.js?v=1.5"></script>
 
 </body>
 </html>

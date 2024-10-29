@@ -98,7 +98,7 @@
 <script src="public/js/lib/tether/tether.min.js"></script>
 <script src="public/js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="public/js/plugins.js"></script>
-    <script type="text/javascript" src="public/js/lib/match-height/jquery.matchHeight.min.js"></script>
+    <script type="text/javascript" src="public/js/lib/match-height/jquery.matchHeight.min.js?v=1.5"></script>
     <script>
         $(function() {
             $('.page-center').matchHeight({
@@ -116,7 +116,7 @@
         });
     </script>
 <script src="public/js/app.js"></script>
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="index.js?v=1.5"></script>
 
 </body>
 </html>
